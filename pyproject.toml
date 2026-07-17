@@ -5,12 +5,20 @@ build-backend = "hatchling.build"
 [project]
 name = "linuxmd"
 version = "0.1.0a0"
-description = "Linux diagnostic and health-assessment framework with structured JSON reports."
+description = "System-scale analysis for Linux infrastructure using structured evidence and validated health assessments."
+keywords = [
+    "linux",
+    "diagnostics",
+    "observability",
+    "performance",
+    "security",
+    "llm",
+    "ai-infrastructure",
+]
 readme = "README.md"
 requires-python = ">=3.12"
 license = { file = "LICENSE" }
 authors = [{ name = "LinuxMD Contributors" }]
-keywords = ["linux", "diagnostics", "cli"]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Environment :: Console",

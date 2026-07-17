@@ -192,7 +192,7 @@ Core platform
 - Deterministic security analysis
 - Structured JSON evidence
 - Provider-assisted LLM analysis
-- Evidence validation and authoritative overlays-
+- Evidence validation and authoritative overlays
 - Multiple LLM providers
 
 ---

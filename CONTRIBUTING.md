@@ -1,11 +1,11 @@
 # Contributing to LinuxMD
 
-Bug reports, feature requests, and pull requests are welcome. Please include enough diagnostic
-context to reproduce a problem, but remove credentials and sensitive host information before
-sharing reports.
+LinuxMD is currently in an early alpha stage. Direct issue creation is temporarily restricted while
+the initial architecture and interfaces are evolving.
 
-Keep changes focused and follow the existing Python style and type annotations. Add or update tests
-for behavior changes.
+Focused pull requests are welcome. For questions, bug reports, or proposed enhancements, please
+contact the project author through the LinkedIn link in the main README before preparing a large
+change.
 
 Run the project checks before submitting a pull request:
 

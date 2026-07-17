@@ -32,7 +32,7 @@ If you don't already have it installed, install **uv** first:
 https://docs.astral.sh/uv/ then clone and install LinuxMD:
 
 ```console
-git clone <repository-url>
+git clone https://github.com/shankar-ravi-v/linuxMD.git
 cd linuxMD
 uv sync
 ```
