@@ -42,9 +42,9 @@ create or overwrite `output/analysis.json`.
 Generic configuration:
 
 ```console
-export LINUXMD_PROVIDER=<openai|gemini|deepseek>
-export LINUXMD_API_KEY=<your_api_key>
-export LINUXMD_MODEL=<optional_model_override>
+export LINUXMD_PROVIDER=openai|gemini|deepseek
+export LINUXMD_API_KEY=your_api_key
+export LINUXMD_MODEL=optional_model_override
 uv run linuxmd analyze
 ```
 
@@ -173,7 +173,6 @@ See [Performance diagnostics](docs/performance.md) for sampling methodology and 
 - [LLM providers](docs/providers.md)
 - [Remote collection](docs/remote-collection.md)
 - [Schemas and evidence](docs/schema.md)
-- [Roadmap](docs/roadmap.md)
 - [Release checklist](docs/RELEASE_CHECKLIST.md)
 
 # Feature Roadmap

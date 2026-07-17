@@ -63,7 +63,7 @@ Configure OpenAI, Gemini, or DeepSeek to generate a validated cross-report healt
 
 ```console
 export LINUXMD_PROVIDER=deepseek
-export LINUXMD_API_KEY=<your_api_key>
+export LINUXMD_API_KEY=your_api_key
 uv run linuxmd analyze
 ```
 
