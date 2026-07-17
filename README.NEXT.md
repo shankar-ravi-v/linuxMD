@@ -176,6 +176,140 @@ See [Performance diagnostics](docs/performance.md) for sampling methodology and 
 - [Roadmap](docs/roadmap.md)
 - [Release checklist](docs/RELEASE_CHECKLIST.md)
 
+# Feature Roadmap
+
+LinuxMD is evolving from a Linux diagnostics utility into a system-scale analysis
+framework for modern AI infrastructure. The roadmap below represents the current
+technical direction and may evolve as the project matures.
+
+## Phase 1 — Foundation (Current)
+
+Core platform
+
+- System inventory collection
+- Performance diagnostics
+- Security evidence collection
+- Deterministic security analysis
+- Structured JSON evidence
+- Provider-assisted LLM analysis
+- Evidence validation and authoritative overlays-
+- Multiple LLM providers
+
+---
+
+## Phase 2 — Platform Visibility
+
+Expand hardware awareness beyond the operating system.
+
+Planned capabilities include:
+
+- PCIe topology discovery
+- PCIe link width and generation validation
+- NUMA topology analysis
+- CPU cache hierarchy reporting
+- Memory topology
+- Storage topology
+- Network topology
+- Kernel configuration inspection
+- Virtualization detection
+- Container and Kubernetes awareness
+
+---
+
+## Phase 3 — Performance Intelligence
+
+Move beyond snapshot collection toward subsystem diagnostics.
+
+Potential additions include:
+
+- Extended performance sampling
+- eBPF-based collectors
+- CPU scheduler analysis
+- Interrupt distribution
+- NUMA locality validation
+- Memory pressure analysis
+- Cache efficiency
+- Storage latency analysis
+- Network latency and retransmission analysis
+- GPU utilization and bottleneck detection
+
+---
+
+## Phase 4 — AI Infrastructure
+
+Support heterogeneous accelerator platforms.
+
+Areas of interest include:
+
+- NVIDIA GPU diagnostics
+- AMD GPU diagnostics
+- Intel GPU diagnostics
+- CUDA runtime inspection
+- ROCm inspection
+- CXL topology
+- DPU awareness
+- SmartNIC diagnostics
+- NVMe health analysis
+- High-speed networking validation
+- Multi-node cluster visibility
+
+---
+
+## Phase 5 — Intelligent Analysis
+
+Increase deterministic reasoning while reducing LLM dependence.
+
+Potential work includes:
+
+- Cross-collector correlation
+- Rule-based expert system
+- Confidence scoring
+- Health scoring
+- Drift detection
+- Baseline comparison
+- Regression detection
+- Root cause hypothesis generation
+- Recommendation ranking
+- Explainable evidence chains
+
+---
+
+## Phase 6 — Enterprise Scale
+
+Long-term direction for production environments.
+
+Possible capabilities:
+
+- Fleet-wide analysis
+- Historical trend analysis
+- Continuous monitoring
+- Scheduled collections
+- Central evidence repository
+- Web dashboard
+- REST API
+- Alerting
+- Report generation
+- CI/CD integration
+
+---
+
+## Design Principles
+
+LinuxMD is guided by several core principles.
+
+- Evidence before interpretation
+- Deterministic analysis whenever possible
+- LLMs assist rather than replace engineering judgment
+- Versioned schemas
+- Transparent confidence levels
+- Vendor-neutral architecture
+- Open and extensible collector framework
+
+---
+
+This roadmap reflects the current direction of the project rather than a
+commitment to delivery dates or feature completeness.
+
 ## License
 
 LinuxMD is licensed under the MIT License. See [LICENSE](LICENSE) for details.

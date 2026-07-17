@@ -1,11 +1,5 @@
 # LinuxMD
 
-<p align="center">
-  <img src="assets/linuxmd-logo.svg"
-       alt="LinuxMD — System-Scale Analysis for Linux"
-       width="420">
-</p>
-
 LinuxMD is an experimental open-source System-Scale Analysis tool for Linux. It collects structured
 system, performance, and security evidence and can optionally use an LLM to produce a validated
 cross-report health assessment.
@@ -22,6 +16,12 @@ cross-report health assessment.
 
 LinuxMD `v0.1.0-alpha` is intended for early testing and feedback. Schemas, collectors, and
 analysis behavior may evolve before a stable release.
+
+LinuxMD has undergone limited testing and should be considered experimental software. If there is
+sufficient community interest in bug fixes, feature requests, or enhancements, I plan to enable
+GitHub Issues and GitHub Discussions.
+
+Questions or feedback are always welcome. You can reach me via LinkedIn: www.linkedin.com/in/ravi1shankar
 
 ## Quick Start
 
@@ -102,7 +102,7 @@ Security   Attention
 
 ## Next Steps
 
-- [README.NEXT.md](README.NEXT.md) - complete user guide
+- [README.NEXT.md](README.NEXT.md) - complete user guide and feature roadmap
 - [Architecture and trust model](docs/architecture.md)
 - [LLM providers](docs/providers.md)
 - [Schemas and evidence](docs/schema.md)
