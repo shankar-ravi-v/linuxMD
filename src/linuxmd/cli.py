@@ -241,9 +241,9 @@ def analyze(
         return
 
     try:
+        _print_report_inspections(inspections)
         if not raw_payload["reports"]:
             raise AnalysisError("No valid analysis reports are available.")
-        _print_report_inspections(inspections)
         config = PROVIDER_CONFIGS.get(configured_provider)
         if config is None:
             raise AnalysisError(f"Unsupported LINUXMD_PROVIDER: {configured_provider}")

@@ -100,6 +100,7 @@ def test_analyze_reports_no_input_files(tmp_path, monkeypatch, create_output) ->
     assert result.exit_code == 1
     assert "No valid analysis reports are available" in result.output
     assert "missing" in result.output
+    assert "invalid" not in result.output
     assert "Traceback" not in result.output
 
 
@@ -115,6 +116,7 @@ def test_analyze_reports_invalid_json_but_uses_other_valid_inputs(
 
     assert result.exit_code == 0
     assert "invalid" in result.output
+    assert invalid in result.output
     assert "Traceback" not in result.output
 
 
@@ -123,12 +125,36 @@ def test_analyze_fails_when_every_existing_report_is_invalid(tmp_path, monkeypat
     output.mkdir()
     (output / "diag.json").write_text("not-json", encoding="utf-8")
     monkeypatch.chdir(tmp_path)
+    monkeypatch.setenv("LINUXMD_PROVIDER", "openai")
 
     result = runner.invoke(app, ["analyze"])
 
     assert result.exit_code == 1
+    assert "No valid analysis reports are available" in result.output
     assert "diag.json" in result.output
     assert "invalid" in result.output
+
+
+def test_analyze_lists_every_invalid_report_when_none_are_valid(tmp_path, monkeypatch) -> None:
+    output = tmp_path / "output"
+    output.mkdir()
+    invalid_reports = (
+        "diag.json",
+        "performance.json",
+        "security.json",
+        "security-analysis.json",
+    )
+    for filename in invalid_reports:
+        (output / filename).write_text("not-json", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setenv("LINUXMD_PROVIDER", "openai")
+
+    result = runner.invoke(app, ["analyze"])
+
+    assert result.exit_code == 1
+    assert "No valid analysis reports are available" in result.output
+    for filename in invalid_reports:
+        assert filename in result.output
 
 
 @pytest.mark.parametrize("provider", [None, "", "   "])
