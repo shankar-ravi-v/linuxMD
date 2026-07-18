@@ -8,11 +8,7 @@ LinuxMD was created to help bridge that gap. It collects structured diagnostic e
 
 The long-term vision is to evolve LinuxMD into a system-scale analysis framework capable of helping engineers diagnose, validate, and understand increasingly complex AI infrastructure.
 
-# LinuxMD
-
-LinuxMD is an experimental open-source System-Scale Analysis tool for Linux. It collects structured
-system, performance, and security evidence and can optionally use an LLM to produce a validated
-cross-report health assessment.
+# Get Started
 
 > **This guide is intentionally brief.**
 >
