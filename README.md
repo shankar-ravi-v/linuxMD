@@ -29,7 +29,17 @@ LinuxMD uses **uv** for dependency and environment management.
 
 If you don't already have it installed, install **uv** first:
 
-https://docs.astral.sh/uv/ then clone and install LinuxMD:
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+This installs uv into:
+
+~/.local/bin
+
+Then either start a new shell or run:
+
+source ~/.bashrc
+
+More info: https://docs.astral.sh/uv/
 
 ```console
 git clone https://github.com/shankar-ravi-v/linuxMD.git
