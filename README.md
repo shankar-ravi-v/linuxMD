@@ -1,3 +1,13 @@
+# Why LinuxMD?
+
+Modern AI infrastructure has evolved far beyond traditional Linux servers. A single AI system may include CPUs, GPUs, CXL memory expanders, PCIe fabrics, NVLink/NVSwitch interconnects, DPUs, SmartNICs, NVMe storage, 400–800 Gb Ethernet, InfiniBand, and increasingly unified memory spanning multiple devices.
+
+Diagnosing functional failures, configuration issues, or performance bottlenecks in these environments requires collecting evidence from many hardware and software layers. Existing tools typically focus on individual subsystems—CPU, networking, storage, or GPU—but rarely correlate information across the entire system.
+
+LinuxMD was created to help bridge that gap. It collects structured diagnostic evidence from multiple subsystems, performs deterministic analysis where possible, and can optionally leverage an LLM to correlate evidence across reports and produce a validated system-scale health assessment.
+
+The long-term vision is to evolve LinuxMD into a system-scale analysis framework capable of helping engineers diagnose, validate, and understand increasingly complex AI infrastructure.
+
 # LinuxMD
 
 LinuxMD is an experimental open-source System-Scale Analysis tool for Linux. It collects structured
