@@ -529,7 +529,6 @@ def cpu_concern_has_pressure_evidence(concern: dict[str, Any]) -> bool:
         "run queue above",
         "run_queue_ratio > 1",
         "run_queue_ratio above 1",
-        "run_queue_ratio=1.",
         "runnable demand exceeded",
         "runnable demand above effective",
         "scheduler psi",
@@ -544,6 +543,27 @@ def cpu_concern_has_pressure_evidence(concern: dict[str, Any]) -> bool:
     )
     if any(phrase in text for phrase in phrases):
         return True
+
+    run_queue_ratios = re.findall(r"\brun_queue_ratio\s*=\s*(\d+(?:\.\d+)?)", text)
+    if any(float(value) > 1.0 for value in run_queue_ratios):
+        return True
+
+    run_queue_depths = re.findall(
+        r"\brun[ _-]?queue depth(?: average)?\s*(?:[=:]\s*)?"
+        r"(\d+(?:\.\d+)?)\s+on\s+(\d+(?:\.\d+)?)\s+cpus?\b",
+        text,
+    )
+    if any(float(depth) > float(cpus) for depth, cpus in run_queue_depths):
+        return True
+
+    psi_some_avg10 = re.findall(
+        r"\b(?:psi|scheduler(?:[._ -]+(?:psi|pressure))?|cpu[._ -]+pressure)"
+        r"[._ -]+some[._ -]+avg10\s*[=:]\s*(\d+(?:\.\d+)?)",
+        text,
+    )
+    if any(float(value) > 0 for value in psi_some_avg10):
+        return True
+
     load = re.search(r"load average\D+(\d+(?:\.\d+)?)", text)
     cpus = re.search(r"(\d+)\s+(?:logical|effective) cpus", text)
     return bool(load and cpus and float(load.group(1)) > int(cpus.group(1)))
