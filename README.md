@@ -29,9 +29,7 @@ The long-term vision is to evolve LinuxMD into a system-scale analysis framework
 LinuxMD `v0.1.0-alpha` is intended for early testing and feedback. Schemas, collectors, and
 analysis behavior may evolve before a stable release.
 
-LinuxMD has undergone limited testing and should be considered experimental software. If there is
-sufficient community interest in bug fixes, feature requests, or enhancements, I plan to enable
-GitHub Issues and GitHub Discussions.
+LinuxMD has undergone limited testing and should be considered experimental software. 
 
 Questions or feedback are always welcome. You can reach me via LinkedIn: www.linkedin.com/in/ravi1shankar
 
