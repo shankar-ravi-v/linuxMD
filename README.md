@@ -2,9 +2,15 @@
 
 Modern AI infrastructure has evolved far beyond traditional Linux servers. A single AI system may include CPUs, GPUs, CXL memory expanders, PCIe fabrics, NVLink/NVSwitch interconnects, DPUs, SmartNICs, NVMe storage, 400–800 Gb Ethernet, InfiniBand, and increasingly unified memory spanning multiple devices.
 
-Diagnosing functional failures, configuration issues, or performance bottlenecks in these environments requires collecting evidence from many hardware and software layers. Existing tools typically focus on individual subsystems—CPU, networking, storage, or GPU—but rarely correlate information across the entire system.
+Historically, enterprise operating systems such as Solaris Fault Management Architecture (FMA) demonstrated the value of correlating hardware telemetry instead of reacting to isolated errors. Techniques such as SERD (Statistical Event Rate Discriminator) analyzed recurring fault patterns over time, allowing the operating system to distinguish transient failures from persistent hardware faults and proactively retire failing components such as memory DIMMs.
 
-LinuxMD was created to help bridge that gap. It collects structured diagnostic evidence from multiple subsystems, performs deterministic analysis where possible, and can optionally leverage an LLM to correlate evidence across reports and produce a validated system-scale health assessment.
+Modern Linux provides many excellent subsystem-specific capabilities—including EDAC for memory errors, Machine Check Architecture (MCA), AER for PCIe, NVMe health reporting, GPU telemetry, networking statistics, and numerous kernel tracing facilities. These tools provide valuable information individually, but they generally operate independently.
+
+The remaining challenge is system-level correlation across hardware and software.
+
+When a production AI system experiences degraded performance or intermittent failures, the root cause may span multiple layers. A PCIe link retraining event may coincide with GPU throttling, NUMA memory imbalance, CXL latency changes, storage congestion, firmware warnings, scheduler behavior, or application-level performance regressions. Engineers are often left manually collecting evidence from many independent tools before forming a complete picture.
+
+LinuxMD was created to help bridge that gap. It collects structured diagnostic evidence from multiple hardware and software subsystems, normalizes that information into a common schema, performs deterministic analysis where possible, and can optionally leverage an LLM to correlate evidence across reports and produce a validated system-scale health assessment.
 
 The long-term vision is to evolve LinuxMD into a system-scale analysis framework capable of helping engineers diagnose, validate, and understand increasingly complex AI infrastructure.
 
