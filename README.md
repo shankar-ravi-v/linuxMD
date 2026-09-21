@@ -12,7 +12,7 @@ When a production AI system experiences degraded performance or intermittent fai
 
 LinuxMD was created to help bridge that gap. It collects structured diagnostic evidence from multiple hardware and software subsystems, normalizes that information into a common schema, performs deterministic analysis where possible, and can optionally leverage an LLM to correlate evidence across reports and produce a validated system-scale health assessment.
 
-The long-term vision is to evolve LinuxMD into a system-scale analysis framework capable of helping engineers diagnose, validate, and understand increasingly complex AI infrastructure.
+The long-term vision is to evolve LinuxMD into a system-scale analysis framework capable of helping engineers diagnose, validate, andunderstand increasingly complex AI infrastructure.
 
 # Get Started
 
